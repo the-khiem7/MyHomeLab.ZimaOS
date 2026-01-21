@@ -1,0 +1,20 @@
+name: EzyFix
+version: '3.9'
+
+x-casaos:
+  title:
+    en_us: "EzyFix"
+  icon: "https://avatars.githubusercontent.com/u/232832264?s=200&v=4"
+  description:
+    en_us: " A home-service platform connecting customers with trusted local repair professionals. Features include booking, progress tracking, and service reviews. Integrated AI provides technician recommendations, cost estimation, and issue diagnostics from text or images - enhancing user experience and streamlining the entire repair workflow"
+  port_map: "5000"
+  index: /swagger/index.html
+
+services:
+  ezyfix:
+    container_name: ezyfix
+    image: thekhiem7/ezyfix-api:latest
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:

@@ -1,0 +1,20 @@
+name: fengshuikoi
+version: '3.9'
+
+x-casaos:
+  title:
+    en_us: "Feng Shui Koi Consulting"
+  icon: "https://avatars.githubusercontent.com/u/241074052?s=200&v=4"
+  description:
+    en_us: "Feng Shui Koi Consulting is an ASP.NET Core backend API for managing user and business claims. It includes features like authentication, claim submission/approval workflows, payment processing, email notifications, OTP verification, cloud storage integration (Cloudinary), and comprehensive unit testing"
+  port_map: "5004"
+  index: /swagger/index.html
+
+services:
+  fengshuikoi:
+    container_name: fengshuikoi
+    image: thekhiem7/fengshuikoi:1.2-net8
+    ports:
+      - "5004:5000"
+      - "5005:5001"
+    environment:

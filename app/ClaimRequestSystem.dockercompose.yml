@@ -1,0 +1,20 @@
+name: claim-request-system
+version: '3.9'
+
+x-casaos:
+  title:
+    en_us: "Claim Request System"
+  icon: "https://avatars.githubusercontent.com/u/241074052?s=200&v=4"
+  description:
+    en_us: "ClaimRequestSystem is an ASP.NET Core backend API for managing user and business claims. It includes features like authentication, claim submission/approval workflows, payment processing, email notifications, OTP verification, cloud storage integration (Cloudinary), and comprehensive unit testing"
+  port_map: "5002"
+  index: /swagger/index.html
+
+services:
+  claim-request-system:
+    container_name: claim-request-system
+    image: thekhiem7/claimrequestsystem:1.0-net8
+    ports:
+      - "5002:5000"
+      - "5003:5001"
+    environment:
