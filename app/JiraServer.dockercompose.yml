@@ -1,0 +1,62 @@
+version: '3.9'
+x-casaos:
+  main: jira
+  title:
+    en_us: "Jira"
+  description:
+    en_us: "Atlassian Jira Server for issue tracking and project management."
+  icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/jira.webp"
+  category: Development
+  port_map: "6100"
+  index: /
+  tips:
+    before_install:
+      en_us: |
+        - Author repo: https://github.com/haxqer/jira.git
+
+services:
+  jira:
+    image: haxqer/jira:9.17.5
+    container_name: jira-srv
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+#      - JVM_MINIMUM_MEMORY=1g
+#      - JVM_MAXIMUM_MEMORY=12g
+#      - JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=8g'
+    depends_on:
+      - mysql
+    ports:
+      - "6100:8080"
+    volumes:
+      - /DATA/AppData/Jira:/var/jira
+    restart: always
+    networks:
+      - network-bridge
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-jira
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+      - MYSQL_DATABASE=jira
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_USER=jira
+      - MYSQL_PASSWORD=123123
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_bin']
+#    ports:
+#      - "13306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+    networks:
+      - network-bridge
+
+networks:
+  network-bridge:
+    driver: bridge
+
+volumes:
+  home_data:
+    external: false
+  mysql_data:
+    external: false
