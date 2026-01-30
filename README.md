@@ -1,4 +1,4 @@
-# ZimaOS
+![ZimaTechstack](image/ZimaTechstack.png)
 ![Zima](Zima.png)
 ![ZimaHomepage](image/ZimaHomepage.png)
 
