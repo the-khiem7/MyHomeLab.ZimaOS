@@ -1,20 +1,52 @@
-name: EzyFix
-version: '3.9'
-
+name: ezyfix
 x-casaos:
+  author: self
+  category: self
+  
   title:
-    en_us: "EzyFix"
-  icon: "https://avatars.githubusercontent.com/u/232832264?s=200&v=4"
+    custom: EzyFix
+    en_us: EzyFix
   description:
-    en_us: " A home-service platform connecting customers with trusted local repair professionals. Features include booking, progress tracking, and service reviews. Integrated AI provides technician recommendations, cost estimation, and issue diagnostics from text or images - enhancing user experience and streamlining the entire repair workflow"
-  port_map: "5000"
+    en_us: " A home-service platform connecting customers with trusted local repair
+      professionals. Features include booking, progress tracking, and service
+      reviews. Integrated AI provides technician recommendations, cost
+      estimation, and issue diagnostics from text or images - enhancing user
+      experience and streamlining the entire repair workflow"
+  hostname: ""
+  icon: https://avatars.githubusercontent.com/u/232832264?s=200&v=4
   index: /swagger/index.html
+  is_uncontrolled: false
+  port_map: "5000"
+  scheme: http
+  store_app_id: ezyfix
 
 services:
   ezyfix:
+    cpu_shares: 90
+    command: []
     container_name: ezyfix
+    deploy:
+      resources:
+        limits:
+          memory: 8283287552
+        reservations:
+          devices: []
+
     image: thekhiem7/ezyfix-api:latest
+    labels:
+      icon: https://avatars.githubusercontent.com/u/232832264?s=200&v=4
     ports:
-      - "5000:5000"
-      - "5001:5001"
+      - target: 5000
+        published: "5000"
+        protocol: tcp
+      - target: 5001
+        published: "5001"
+        protocol: tcp
+    restart: unless-stopped
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+
     environment:
