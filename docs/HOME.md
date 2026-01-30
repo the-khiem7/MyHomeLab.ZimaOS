@@ -2,7 +2,7 @@
 
 Welcome to the documentation for my ZimaOS Home Lab. This repository serves as the central configuration and knowledge base for all self-hosted services.
 
-![Zima Tech Stack](image/ZimaTechstack.png)
+![Zima Tech Stack](/docs/image/ZimaTechstack.png)
 
 ## Overview
 
@@ -17,15 +17,15 @@ This lab hosts a variety of services ranging from development tools (Jira, Jenki
 
 ## Gallery
 
-![ZimaOS Dashboard](image/ZimaHomepage.png)
+![ZimaOS Dashboard](/docs/image/ZimaHomepage.png)
 
 <table>
   <tr>
-    <td><img src="image/MyT420s.png" alt="MyT420s" /></td>
-    <td><img src="image/IntallZimaOS.png" alt="Install ZimaOS" /></td>
+    <td><img src="/docs/image/MyT420s.png" alt="MyT420s" /></td>
+    <td><img src="/docs/image/IntallZimaOS.png" alt="Install ZimaOS" /></td>
   </tr>
   <tr>
-    <td><img src="image/CleaningRam.png" alt="Cleaning Ram" /></td>
-    <td><img src="image/FirstRun.png" alt="First Run" /></td>
+    <td><img src="/docs/image/CleaningRam.png" alt="Cleaning Ram" /></td>
+    <td><img src="/docs/image/FirstRun.png" alt="First Run" /></td>
   </tr>
 </table>
