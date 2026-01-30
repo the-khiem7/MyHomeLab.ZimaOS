@@ -1,0 +1,22 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Envrionment
+.env
+.env.*
+!.env.example
+
+# Docsify
+docs/index.html.bak

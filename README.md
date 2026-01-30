@@ -2,6 +2,9 @@
 
 Welcome to the documentation for my ZimaOS Home Lab. This repository serves as the central configuration and knowledge base for all self-hosted services.
 
+
+![Deploy Docsify to GitHub Pages](https://github.com/the-khiem7/MyHomeLab.ZimaOS/actions/workflows/deploy-docsify.yml/badge.svg)
+
 ![Zima Tech Stack](docs/image/ZimaTechstack.png)
 
 ## Overview
