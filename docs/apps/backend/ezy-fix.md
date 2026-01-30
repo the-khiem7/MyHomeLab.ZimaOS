@@ -35,7 +35,7 @@ A home-service platform connecting customers with trusted local repair professio
 
 <!-- api-example:start -->
 #### Docker Compose
-[EzyFix.dockercompose.yml](../../app/EzyFix.dockercompose.yml ':include :type=yaml')
+[EzyFix.dockercompose.yml](../../../ZimaCompose/backend/EzyFix.dockercompose.yml ':include :type=yaml')
 <!-- api-example:end -->
 
 <!-- api-section:end -->

@@ -30,7 +30,7 @@ ClaimRequestSystem is an ASP.NET Core backend API for managing user and business
 
 <!-- api-example:start -->
 #### Docker Compose
-[ClaimRequestSystem.dockercompose.yml](../../app/ClaimRequestSystem.dockercompose.yml ':include :type=yaml')
+[ClaimRequestSystem.dockercompose.yml](../../../ZimaCompose/backend/ClaimRequestSystem.dockercompose.yml ':include :type=yaml')
 <!-- api-example:end -->
 
 <!-- api-section:end -->

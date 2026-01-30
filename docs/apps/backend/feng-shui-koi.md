@@ -14,8 +14,7 @@ Feng Shui Koi Consulting is an ASP.NET Core backend API for managing user and bu
 1.  Open **Files** in CasaOS.
 2.  Navigate to proper location.
 3.  Create a file named `docker-compose.yml`.
-4.  Paste the content from the source on the right.
-5.  Click the options menu on the file -> **Install**.
+4.  Paste the content from the source on the right.  Click the options menu on the file -> **Install**.
 
 ## Configuration
 
@@ -30,7 +29,7 @@ Feng Shui Koi Consulting is an ASP.NET Core backend API for managing user and bu
 
 <!-- api-example:start -->
 #### Docker Compose
-[FengShuiKoi.dockercompose.yml](../../app/FengShuiKoi.dockercompose.yml ':include :type=yaml')
+[FengShuiKoi.dockercompose.yml](../../../ZimaCompose/backend/FengShuiKoi.dockercompose.yml ':include :type=yaml')
 <!-- api-example:end -->
 
 <!-- api-section:end -->

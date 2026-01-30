@@ -14,8 +14,7 @@ FastAPI service for snake species detection using YOLO12 on CPU.
 1.  Open **Files** in CasaOS.
 2.  Navigate to proper location (e.g. `/DATA/AppData/custom-apps`).
 3.  Create a file named `docker-compose.yml`.
-4.  Paste the content from the source on the right.
-5.  Click the options menu on the file -> **Install**.
+4.  Paste the content from the source on the right.  Click the options menu on the file -> **Install**.
 
 ## Configuration
 
@@ -40,7 +39,7 @@ The following environment variables can be configured:
 
 <!-- api-example:start -->
 #### Docker Compose
-[SnakeAI.dockercompose.yml](../../app/SnakeAI.dockercompose.yml ':include :type=yaml')
+[SnakeAI.dockercompose.yml](../../../ZimaCompose/backend/SnakeAI.dockercompose.yml ':include :type=yaml')
 <!-- api-example:end -->
 
 <!-- api-section:end -->

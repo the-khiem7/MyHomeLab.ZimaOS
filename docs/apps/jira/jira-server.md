@@ -44,7 +44,7 @@ Atlassian Jira Server for issue tracking and project management.
 
 <!-- api-example:start -->
 #### Docker Compose
-[JiraServer.dockercompose.yml](../../app/JiraServer.dockercompose.yml ':include :type=yaml')
+[JiraServer.dockercompose.yml](../../../ZimaCompose/jira/JiraServer.dockercompose.yml ':include :type=yaml')
 <!-- api-example:end -->
 
 <!-- api-section:end -->

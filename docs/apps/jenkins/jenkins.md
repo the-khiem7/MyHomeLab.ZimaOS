@@ -24,10 +24,10 @@ Jenkins automation server for building and deploying projects.
 
 <!-- api-example:start -->
 #### Docker Compose
-[JenkinsDock.dockercompose.yaml](../../jenkins/JenkinsDock.dockercompose.yaml ':include :type=yaml')
+[JenkinsDock.dockercompose.yaml](../../../ZimaCompose/jenkins/JenkinsDock.dockercompose.yaml ':include :type=yaml')
 
 #### Dockerfile
-[dockerfile](../../jenkins/dockerfile ':include :type=dockerfile')
+[dockerfile](../../../ZimaCompose/jenkins/dockerfile ':include :type=dockerfile')
 <!-- api-example:end -->
 
 <!-- api-section:end -->
