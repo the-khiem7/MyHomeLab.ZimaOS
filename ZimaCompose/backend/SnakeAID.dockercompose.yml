@@ -1,0 +1,11 @@
+services:
+  snakeaid-api:
+    image: thekhiem7/snakeaid-api:latest
+    pull_policy: always
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
