@@ -18,9 +18,9 @@ This guide helps you set up and manage the services in this repository using Zim
    ```
 
 2. **Deploy an App**:
-   Navigate to the app directory (files are at root `app/`) and use `docker-compose`.
+   Navigate to the app directory (files are at root `ZimaCompose/backend/`) and use `docker-compose`.
    ```bash
-   docker-compose -f app/SnakeAI.dockercompose.yml up -d
+   docker-compose -f ZimaCompose/backend/SnakeAI.dockercompose.yml up -d
    ```
 
 3. **Import to CasaOS UI**:
@@ -30,6 +30,5 @@ This guide helps you set up and manage the services in this repository using Zim
 
 ## Directory Structure
 
-- `app/`: Contains Docker Compose definitions for applications.
-- `jenkins/`: Infrastructure code for Jenkins.
+- `ZimaCompose/`: Contains Docker Compose definitions for applications (grouped by `backend`, `jira`, `jenkins`).
 - `docs/`: This configuration documentation.

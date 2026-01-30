@@ -13,7 +13,7 @@ This lab hosts a variety of services ranging from development tools (Jira, Jenki
 - [**Getting Started**](getting-started.md): How to deploy these apps.
 - [**Applications**](apps/README.md): Detailed guides for each service.
 - [**Agent Guidance**](agents.md): For AI Agents modifying this repo.
-- [**Infrastructure**](infrastructure/jenkins.md): CI/CD and system tools.
+- [**Infrastructure**](apps/jenkins/jenkins.md): CI/CD and system tools.
 
 ## Gallery
 
