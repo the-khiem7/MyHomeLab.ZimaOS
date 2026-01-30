@@ -1,0 +1,89 @@
+name: jenkinsdock
+x-casaos:
+  title:
+    custom: ""
+    en_us: jenkinsdock
+
+  author: self
+  category: self
+  hostname: ""
+  icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+  index: /
+  is_uncontrolled: false
+  port_map: "8080"
+  scheme: http
+  store_app_id: jenkinsdock
+
+services:
+  jenkinsdock:
+    cpu_shares: 50
+    command: []
+    container_name: JenkinsDock
+    depends_on:
+      dind:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          memory: 8283291648
+        reservations:
+          devices: []
+    environment:
+      - DOCKER_BUILDKIT=1
+      - DOCKER_HOST=tcp://dind:2375
+    hostname: JenkinsDock
+    image: thekhiem7/jenkinsdock:lts-jdk17
+    labels:
+      icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+    ports:
+      - target: 8080
+        published: "8080"
+        protocol: tcp
+    restart: always
+    user: root
+    volumes:
+      - type: bind
+        source: /DATA/AppData/Jenkins/data
+        target: /data
+      - type: bind
+        source: /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data
+        target: /var/jenkins_home
+    devices: []
+    cap_add: []
+    networks:
+      - jenkinsdock
+    privileged: false
+
+  dind:
+    cpu_shares: 90
+    command:
+      - --host=tcp://0.0.0.0:2375
+      - --storage-driver=overlay2
+    container_name: dind-jenkinsdock
+    deploy:
+      resources:
+        limits:
+          memory: 8283291648
+        reservations:
+          devices: []
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    image: docker:27-dind
+    labels:
+      icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+    privileged: true
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/JenkinsDock/dind-data
+        target: /var/lib/docker
+    ports: []
+    devices: []
+    cap_add: []
+    networks:
+      - jenkinsdock
+
+networks:
+  jenkinsdock:
+    name: jenkinsdock
