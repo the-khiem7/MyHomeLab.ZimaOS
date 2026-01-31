@@ -1,5 +1,6 @@
 services:
   snakeaid-api:
+    container_name: snakeaid-api
     image: thekhiem7/snakeaid-api:latest
     pull_policy: always
     # build:
@@ -8,4 +9,20 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
+    networks:
+      - snake_net
     environment:
+
+  snakeai:
+    container_name: snakeai
+    image: thekhiem7/snakeaid-snake-detection-ai:8
+    ports:
+      - "8386:8000"
+    restart: unless-stopped
+    networks:
+      - snake_net
+    environment:
+
+networks:
+  snake_net:
+    driver: bridge
