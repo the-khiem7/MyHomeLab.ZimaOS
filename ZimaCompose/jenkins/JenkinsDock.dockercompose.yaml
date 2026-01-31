@@ -7,7 +7,7 @@ x-casaos:
   author: self
   category: self
   hostname: ""
-  icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+  icon: https://raw.githubusercontent.com/the-khiem7/MyHomeLab.ZimaOS/da98a882ffa0b23767c91b5e3e36ce52a597eb60/docs/image/JenkinsDock.png
   index: /
   is_uncontrolled: false
   port_map: "8080"
@@ -35,7 +35,7 @@ services:
     hostname: JenkinsDock
     image: thekhiem7/jenkinsdock:lts-jdk17
     labels:
-      icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+      icon: https://raw.githubusercontent.com/the-khiem7/MyHomeLab.ZimaOS/da98a882ffa0b23767c91b5e3e36ce52a597eb60/docs/image/JenkinsDock.png
     ports:
       - target: 8080
         published: "8080"
@@ -71,7 +71,7 @@ services:
       - DOCKER_TLS_CERTDIR=
     image: docker:27-dind
     labels:
-      icon: https://www.jenkins.io/images/docker/dockerJenkins.png
+      icon: https://raw.githubusercontent.com/the-khiem7/MyHomeLab.ZimaOS/da98a882ffa0b23767c91b5e3e36ce52a597eb60/docs/image/JenkinsDock.png
     privileged: true
     restart: always
     volumes:
