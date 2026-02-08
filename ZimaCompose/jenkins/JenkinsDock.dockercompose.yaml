@@ -2,7 +2,7 @@ name: jenkinsdock
 x-casaos:
   title:
     custom: ""
-    en_us: jenkinsdock
+    en_us: JenkinsDock
 
   author: self
   category: self
