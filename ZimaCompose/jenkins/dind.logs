@@ -1,0 +1,273 @@
+iptables v1.8.11 (legacy)
+time="2026-02-05T20:32:17.540788296Z" level=info msg="Starting up"
+time="2026-02-05T20:32:17.541695609Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:17.541717557Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:17.541734562Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:18.542618231Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:18.542660620Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:18.542677236Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:18.542690744Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-05T20:32:33.550129910Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-05T20:32:33.571412640Z" level=info msg="started new containerd process" address=/var/run/docker/containerd/containerd.sock module=libcontainerd pid=32
+time="2026-02-05T20:32:40.218455970Z" level=info msg="starting containerd" revision=bcc810d6b9066471b0b6fa75f557a15a1cbf31bb version=v1.7.25
+time="2026-02-05T20:32:40.399942846Z" level=info msg="loading plugin \"io.containerd.event.v1.exchange\"..." type=io.containerd.event.v1
+time="2026-02-05T20:32:40.399988191Z" level=info msg="loading plugin \"io.containerd.internal.v1.opt\"..." type=io.containerd.internal.v1
+time="2026-02-05T20:32:40.423521060Z" level=info msg="loading plugin \"io.containerd.warning.v1.deprecations\"..." type=io.containerd.warning.v1
+time="2026-02-05T20:32:40.423587056Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.462630525Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." error="no scratch file generator: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.462704587Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.462731671Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." error="devmapper not configured: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.462754112Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.native\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.463283401Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.overlayfs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.513724319Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.aufs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.756743523Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.aufs\"..." error="aufs is not supported (modprobe aufs failed: exit status 1 \"ip: can't find device 'aufs'\\nmodprobe: can't change directory to '/lib/modules': No such file or directory\\n\"): skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.756837207Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.zfs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.757174646Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.zfs\"..." error="path /var/lib/docker/containerd/daemon/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-05T20:32:40.757232477Z" level=info msg="loading plugin \"io.containerd.content.v1.content\"..." type=io.containerd.content.v1
+time="2026-02-05T20:32:40.757304052Z" level=info msg="loading plugin \"io.containerd.metadata.v1.bolt\"..." type=io.containerd.metadata.v1
+time="2026-02-05T20:32:40.757407823Z" level=info msg="metadata content store policy set" policy=shared
+time="2026-02-05T20:32:40.899761368Z" level=info msg="loading plugin \"io.containerd.gc.v1.scheduler\"..." type=io.containerd.gc.v1
+time="2026-02-05T20:32:40.900028749Z" level=info msg="loading plugin \"io.containerd.differ.v1.walking\"..." type=io.containerd.differ.v1
+time="2026-02-05T20:32:40.900272859Z" level=info msg="loading plugin \"io.containerd.lease.v1.manager\"..." type=io.containerd.lease.v1
+time="2026-02-05T20:32:40.900550569Z" level=info msg="loading plugin \"io.containerd.streaming.v1.manager\"..." type=io.containerd.streaming.v1
+time="2026-02-05T20:32:40.900724095Z" level=info msg="loading plugin \"io.containerd.runtime.v1.linux\"..." type=io.containerd.runtime.v1
+time="2026-02-05T20:32:40.901333870Z" level=info msg="loading plugin \"io.containerd.monitor.v1.cgroups\"..." type=io.containerd.monitor.v1
+time="2026-02-05T20:32:40.902302226Z" level=info msg="loading plugin \"io.containerd.runtime.v2.task\"..." type=io.containerd.runtime.v2
+time="2026-02-05T20:32:40.902829844Z" level=info msg="loading plugin \"io.containerd.runtime.v2.shim\"..." type=io.containerd.runtime.v2
+time="2026-02-05T20:32:40.902921596Z" level=info msg="loading plugin \"io.containerd.sandbox.store.v1.local\"..." type=io.containerd.sandbox.store.v1
+time="2026-02-05T20:32:40.903029400Z" level=info msg="loading plugin \"io.containerd.sandbox.controller.v1.local\"..." type=io.containerd.sandbox.controller.v1
+time="2026-02-05T20:32:40.903133959Z" level=info msg="loading plugin \"io.containerd.service.v1.containers-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903237138Z" level=info msg="loading plugin \"io.containerd.service.v1.content-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903425187Z" level=info msg="loading plugin \"io.containerd.service.v1.diff-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903593582Z" level=info msg="loading plugin \"io.containerd.service.v1.images-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903782128Z" level=info msg="loading plugin \"io.containerd.service.v1.introspection-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903886049Z" level=info msg="loading plugin \"io.containerd.service.v1.namespaces-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.903986570Z" level=info msg="loading plugin \"io.containerd.service.v1.snapshots-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.904173856Z" level=info msg="loading plugin \"io.containerd.service.v1.tasks-service\"..." type=io.containerd.service.v1
+time="2026-02-05T20:32:40.904576164Z" level=info msg="loading plugin \"io.containerd.grpc.v1.containers\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.904682789Z" level=info msg="loading plugin \"io.containerd.grpc.v1.content\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.904788346Z" level=info msg="loading plugin \"io.containerd.grpc.v1.diff\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.904902626Z" level=info msg="loading plugin \"io.containerd.grpc.v1.events\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905058646Z" level=info msg="loading plugin \"io.containerd.grpc.v1.images\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905165593Z" level=info msg="loading plugin \"io.containerd.grpc.v1.introspection\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905387626Z" level=info msg="loading plugin \"io.containerd.grpc.v1.leases\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905479464Z" level=info msg="loading plugin \"io.containerd.grpc.v1.namespaces\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905625457Z" level=info msg="loading plugin \"io.containerd.grpc.v1.sandbox-controllers\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905745575Z" level=info msg="loading plugin \"io.containerd.grpc.v1.sandboxes\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.905956504Z" level=info msg="loading plugin \"io.containerd.grpc.v1.snapshots\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.906067272Z" level=info msg="loading plugin \"io.containerd.grpc.v1.streaming\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.906245163Z" level=info msg="loading plugin \"io.containerd.grpc.v1.tasks\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.906363266Z" level=info msg="loading plugin \"io.containerd.transfer.v1.local\"..." type=io.containerd.transfer.v1
+time="2026-02-05T20:32:40.906544894Z" level=info msg="loading plugin \"io.containerd.grpc.v1.transfer\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.906696083Z" level=info msg="loading plugin \"io.containerd.grpc.v1.version\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.906791372Z" level=info msg="loading plugin \"io.containerd.internal.v1.restart\"..." type=io.containerd.internal.v1
+time="2026-02-05T20:32:40.939333913Z" level=info msg="loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." type=io.containerd.tracing.processor.v1
+time="2026-02-05T20:32:40.939479690Z" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.tracing.processor.v1
+time="2026-02-05T20:32:40.939610394Z" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
+time="2026-02-05T20:32:40.939725266Z" level=info msg="skip loading plugin \"io.containerd.internal.v1.tracing\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.internal.v1
+time="2026-02-05T20:32:40.939821417Z" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
+time="2026-02-05T20:32:40.939920377Z" level=info msg="loading plugin \"io.containerd.nri.v1.nri\"..." type=io.containerd.nri.v1
+time="2026-02-05T20:32:40.940049566Z" level=info msg="NRI interface is disabled by configuration."
+time="2026-02-05T20:32:40.941031265Z" level=info msg=serving... address=/var/run/docker/containerd/containerd-debug.sock
+time="2026-02-05T20:32:40.941432674Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock.ttrpc
+time="2026-02-05T20:32:40.941861061Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock
+time="2026-02-05T20:32:40.942076379Z" level=info msg="containerd successfully booted in 0.775305s"
+time="2026-02-05T20:32:44.341985550Z" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+time="2026-02-05T20:32:45.109856195Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+time="2026-02-05T20:32:48.663929475Z" level=info msg="Loading containers: start."
+time="2026-02-05T20:32:49.735951724Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+time="2026-02-05T20:32:50.036684606Z" level=info msg="Loading containers: done."
+time="2026-02-05T20:32:51.858363732Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled" storage-driver=overlay2
+time="2026-02-05T20:32:51.858516355Z" level=warning msg="[DEPRECATION NOTICE]: API is accessible on http://0.0.0.0:2375 without encryption.\n         Access to the remote API is equivalent to root access on the host. Refer\n         to the 'Docker daemon attack surface' section in the documentation for\n         more information: https://docs.docker.com/go/attack-surface/\nIn future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/"
+time="2026-02-05T20:32:51.858569938Z" level=info msg="Docker daemon" commit=4c9b3b0 containerd-snapshotter=false storage-driver=overlay2 version=27.5.1
+time="2026-02-05T20:32:51.998980034Z" level=info msg="Daemon has completed initialization"
+time="2026-02-05T20:32:55.754243188Z" level=info msg="API listen on [::]:2375"
+time="2026-02-05T20:32:55.755124084Z" level=info msg="API listen on /var/run/docker.sock"
+time="2026-02-05T21:02:45.346947435Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-05T21:02:45.690089558Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-05T21:03:33.036657016Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-08T08:20:00.169770774Z" level=info msg="Processing signal 'terminated'"
+time="2026-02-08T08:20:00.585711247Z" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+time="2026-02-08T08:20:00.586569750Z" level=info msg="Daemon shutdown complete"
+time="2026-02-08T08:20:00.586785034Z" level=info msg="stopping healthcheck following graceful shutdown" module=libcontainerd
+time="2026-02-08T08:20:00.586854214Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+iptables v1.8.11 (legacy)
+time="2026-02-08T08:33:21.731513979Z" level=info msg="Starting up"
+time="2026-02-08T08:33:22.076367818Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:22.076475862Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:22.076521595Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:23.076792265Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:23.076873979Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:23.076918253Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:23.077023854Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T08:33:38.310096100Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T08:33:39.050698340Z" level=info msg="started new containerd process" address=/var/run/docker/containerd/containerd.sock module=libcontainerd pid=31
+failed to start containerd: timeout waiting for containerd to start
+iptables v1.8.11 (legacy)
+time="2026-02-08T13:22:20.864991758Z" level=info msg="Starting up"
+time="2026-02-08T13:22:20.885772702Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:20.885846210Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:20.885882232Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:21.886142979Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:21.886237249Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:21.886273738Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:21.886314921Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:22:36.954436396Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T13:22:36.983513636Z" level=info msg="containerd is still running" module=libcontainerd pid=31
+time="2026-02-08T13:22:51.955160285Z" level=info msg="stopping healthcheck following graceful shutdown" module=libcontainerd
+failed to start containerd: timeout waiting for containerd to start
+iptables v1.8.11 (legacy)
+time="2026-02-08T13:50:34.069842968Z" level=info msg="Starting up"
+time="2026-02-08T13:50:34.070455178Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:34.070481021Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:34.070491408Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:35.071354529Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:35.071443271Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:35.071483873Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:35.071514753Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T13:50:50.079046779Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T13:50:50.131000786Z" level=info msg="started new containerd process" address=/var/run/docker/containerd/containerd.sock module=libcontainerd pid=32
+time="2026-02-08T13:50:54.403394195Z" level=info msg="starting containerd" revision=bcc810d6b9066471b0b6fa75f557a15a1cbf31bb version=v1.7.25
+time="2026-02-08T13:50:54.478470114Z" level=info msg="loading plugin \"io.containerd.event.v1.exchange\"..." type=io.containerd.event.v1
+time="2026-02-08T13:50:54.478565427Z" level=info msg="loading plugin \"io.containerd.internal.v1.opt\"..." type=io.containerd.internal.v1
+time="2026-02-08T13:50:54.478833302Z" level=info msg="loading plugin \"io.containerd.warning.v1.deprecations\"..." type=io.containerd.warning.v1
+time="2026-02-08T13:50:54.478889195Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479005495Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." error="no scratch file generator: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479035203Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479077714Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." error="devmapper not configured: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479107401Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.native\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479175350Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.overlayfs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.479514958Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.aufs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.599797478Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.aufs\"..." error="aufs is not supported (modprobe aufs failed: exit status 1 \"ip: can't find device 'aufs'\\nmodprobe: can't change directory to '/lib/modules': No such file or directory\\n\"): skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.599972509Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.zfs\"..." type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.600259408Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.zfs\"..." error="path /var/lib/docker/containerd/daemon/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+time="2026-02-08T13:50:54.600283619Z" level=info msg="loading plugin \"io.containerd.content.v1.content\"..." type=io.containerd.content.v1
+time="2026-02-08T13:50:54.600364079Z" level=info msg="loading plugin \"io.containerd.metadata.v1.bolt\"..." type=io.containerd.metadata.v1
+time="2026-02-08T13:50:54.600403789Z" level=info msg="metadata content store policy set" policy=shared
+time="2026-02-08T13:50:54.743623144Z" level=info msg="loading plugin \"io.containerd.gc.v1.scheduler\"..." type=io.containerd.gc.v1
+time="2026-02-08T13:50:54.743874898Z" level=info msg="loading plugin \"io.containerd.differ.v1.walking\"..." type=io.containerd.differ.v1
+time="2026-02-08T13:50:54.744046805Z" level=info msg="loading plugin \"io.containerd.lease.v1.manager\"..." type=io.containerd.lease.v1
+time="2026-02-08T13:50:54.744273423Z" level=info msg="loading plugin \"io.containerd.streaming.v1.manager\"..." type=io.containerd.streaming.v1
+time="2026-02-08T13:50:54.744529467Z" level=info msg="loading plugin \"io.containerd.runtime.v1.linux\"..." type=io.containerd.runtime.v1
+time="2026-02-08T13:50:54.744907942Z" level=info msg="loading plugin \"io.containerd.monitor.v1.cgroups\"..." type=io.containerd.monitor.v1
+time="2026-02-08T13:50:54.745908119Z" level=info msg="loading plugin \"io.containerd.runtime.v2.task\"..." type=io.containerd.runtime.v2
+time="2026-02-08T13:50:54.746339199Z" level=info msg="loading plugin \"io.containerd.runtime.v2.shim\"..." type=io.containerd.runtime.v2
+time="2026-02-08T13:50:54.746418230Z" level=info msg="loading plugin \"io.containerd.sandbox.store.v1.local\"..." type=io.containerd.sandbox.store.v1
+time="2026-02-08T13:50:54.746582767Z" level=info msg="loading plugin \"io.containerd.sandbox.controller.v1.local\"..." type=io.containerd.sandbox.controller.v1
+time="2026-02-08T13:50:54.746684381Z" level=info msg="loading plugin \"io.containerd.service.v1.containers-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.746793855Z" level=info msg="loading plugin \"io.containerd.service.v1.content-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.746910839Z" level=info msg="loading plugin \"io.containerd.service.v1.diff-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747085604Z" level=info msg="loading plugin \"io.containerd.service.v1.images-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747387291Z" level=info msg="loading plugin \"io.containerd.service.v1.introspection-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747512521Z" level=info msg="loading plugin \"io.containerd.service.v1.namespaces-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747629203Z" level=info msg="loading plugin \"io.containerd.service.v1.snapshots-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747730602Z" level=info msg="loading plugin \"io.containerd.service.v1.tasks-service\"..." type=io.containerd.service.v1
+time="2026-02-08T13:50:54.747885608Z" level=info msg="loading plugin \"io.containerd.grpc.v1.containers\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748027407Z" level=info msg="loading plugin \"io.containerd.grpc.v1.content\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748271723Z" level=info msg="loading plugin \"io.containerd.grpc.v1.diff\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748391817Z" level=info msg="loading plugin \"io.containerd.grpc.v1.events\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748486167Z" level=info msg="loading plugin \"io.containerd.grpc.v1.images\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748684835Z" level=info msg="loading plugin \"io.containerd.grpc.v1.introspection\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748828154Z" level=info msg="loading plugin \"io.containerd.grpc.v1.leases\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.748976991Z" level=info msg="loading plugin \"io.containerd.grpc.v1.namespaces\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749078293Z" level=info msg="loading plugin \"io.containerd.grpc.v1.sandbox-controllers\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749222565Z" level=info msg="loading plugin \"io.containerd.grpc.v1.sandboxes\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749324034Z" level=info msg="loading plugin \"io.containerd.grpc.v1.snapshots\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749588831Z" level=info msg="loading plugin \"io.containerd.grpc.v1.streaming\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749702212Z" level=info msg="loading plugin \"io.containerd.grpc.v1.tasks\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.749820741Z" level=info msg="loading plugin \"io.containerd.transfer.v1.local\"..." type=io.containerd.transfer.v1
+time="2026-02-08T13:50:54.749983814Z" level=info msg="loading plugin \"io.containerd.grpc.v1.transfer\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.750097522Z" level=info msg="loading plugin \"io.containerd.grpc.v1.version\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.750193979Z" level=info msg="loading plugin \"io.containerd.internal.v1.restart\"..." type=io.containerd.internal.v1
+time="2026-02-08T13:50:54.782758615Z" level=info msg="loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." type=io.containerd.tracing.processor.v1
+time="2026-02-08T13:50:54.782992978Z" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.tracing.processor.v1
+time="2026-02-08T13:50:54.783092651Z" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
+time="2026-02-08T13:50:54.783194501Z" level=info msg="skip loading plugin \"io.containerd.internal.v1.tracing\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.internal.v1
+time="2026-02-08T13:50:54.783440993Z" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
+time="2026-02-08T13:50:54.783565677Z" level=info msg="loading plugin \"io.containerd.nri.v1.nri\"..." type=io.containerd.nri.v1
+time="2026-02-08T13:50:54.783647431Z" level=info msg="NRI interface is disabled by configuration."
+time="2026-02-08T13:50:54.792455492Z" level=info msg=serving... address=/var/run/docker/containerd/containerd-debug.sock
+time="2026-02-08T13:50:54.792741179Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock.ttrpc
+time="2026-02-08T13:50:54.792877440Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock
+time="2026-02-08T13:50:54.792950493Z" level=info msg="containerd successfully booted in 0.390621s"
+time="2026-02-08T13:50:55.590652815Z" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+time="2026-02-08T13:50:56.808005186Z" level=info msg="[graphdriver] trying configured driver: overlay2"
+time="2026-02-08T13:51:00.225611462Z" level=info msg="Loading containers: start."
+time="2026-02-08T13:51:00.938281991Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+time="2026-02-08T13:51:01.171110009Z" level=info msg="Loading containers: done."
+time="2026-02-08T13:51:03.036064204Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled" storage-driver=overlay2
+time="2026-02-08T13:51:03.036292935Z" level=warning msg="[DEPRECATION NOTICE]: API is accessible on http://0.0.0.0:2375 without encryption.\n         Access to the remote API is equivalent to root access on the host. Refer\n         to the 'Docker daemon attack surface' section in the documentation for\n         more information: https://docs.docker.com/go/attack-surface/\nIn future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/"
+time="2026-02-08T13:51:03.036464187Z" level=info msg="Docker daemon" commit=4c9b3b0 containerd-snapshotter=false storage-driver=overlay2 version=27.5.1
+time="2026-02-08T13:51:03.036714955Z" level=info msg="Daemon has completed initialization"
+time="2026-02-08T13:51:10.385772266Z" level=info msg="API listen on [::]:2375"
+time="2026-02-08T13:51:10.385788664Z" level=info msg="API listen on /var/run/docker.sock"
+time="2026-02-08T13:55:51.627964887Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-08T13:55:52.381875358Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-08T13:57:56.820311308Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-08T13:59:05.124140948Z" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+time="2026-02-08T15:45:24.366909081Z" level=info msg="Processing signal 'terminated'"
+time="2026-02-08T15:45:24.670771040Z" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+time="2026-02-08T15:45:24.671561398Z" level=info msg="Daemon shutdown complete"
+time="2026-02-08T15:45:24.671750841Z" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+time="2026-02-08T15:45:25.188474265Z" level=info msg="stopping healthcheck following graceful shutdown" module=libcontainerd
+iptables v1.8.11 (legacy)
+time="2026-02-08T15:50:10.164589958Z" level=info msg="Starting up"
+time="2026-02-08T15:50:10.242915501Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:10.243040761Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:10.243115220Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:11.243400256Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:11.243482214Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:11.243524523Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:11.243556608Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:50:26.433233786Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T15:50:27.073172022Z" level=info msg="started new containerd process" address=/var/run/docker/containerd/containerd.sock module=libcontainerd pid=31
+failed to start containerd: timeout waiting for containerd to start
+time="2026-02-08T15:50:41.434291337Z" level=info msg="stopping healthcheck following graceful shutdown" module=libcontainerd
+iptables v1.8.11 (legacy)
+time="2026-02-08T15:59:01.000349291Z" level=info msg="Starting up"
+time="2026-02-08T15:59:01.104416647Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:01.104452450Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:01.104474775Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:02.105237979Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:02.105376146Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:02.105443201Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:02.105497719Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T15:59:17.120443147Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T15:59:17.146552919Z" level=info msg="containerd is still running" module=libcontainerd pid=31
+failed to start containerd: timeout waiting for containerd to start
+iptables v1.8.11 (legacy)
+time="2026-02-08T16:00:37.784076434Z" level=info msg="Starting up"
+time="2026-02-08T16:00:37.784851091Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:37.784886786Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:37.784909420Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:38.785089556Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:38.785120823Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:38.785154010Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:38.785169946Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:00:53.791640444Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T16:00:53.842917061Z" level=info msg="containerd is still running" module=libcontainerd pid=31
+failed to start containerd: timeout waiting for containerd to start
+iptables v1.8.11 (legacy)
+time="2026-02-08T16:04:05.515233062Z" level=info msg="Starting up"
+time="2026-02-08T16:04:05.516093442Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:05.516150656Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:05.516185245Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:06.516610708Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:06.516698334Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:06.516796493Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:06.516832857Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:04:21.519568825Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T16:04:21.537613554Z" level=info msg="containerd is still running" module=libcontainerd pid=31
+time="2026-02-08T16:04:36.520286197Z" level=info msg="stopping healthcheck following graceful shutdown" module=libcontainerd
+failed to start containerd: timeout waiting for containerd to start
+iptables v1.8.11 (legacy)
+time="2026-02-08T16:06:48.161011291Z" level=info msg="Starting up"
+time="2026-02-08T16:06:48.161732851Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:48.161775916Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:48.161805915Z" level=warning msg="[DEPRECATION NOTICE] In future versions this will be a hard failure preventing the daemon from starting! Learn more at: https://docs.docker.com/go/api-security/" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:49.162209950Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:49.162354339Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:49.162397464Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:06:49.162428652Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
+time="2026-02-08T16:07:04.169678808Z" level=info msg="containerd not running, starting managed containerd"
+time="2026-02-08T16:07:04.170231725Z" level=info msg="containerd is still running" module=libcontainerd pid=31

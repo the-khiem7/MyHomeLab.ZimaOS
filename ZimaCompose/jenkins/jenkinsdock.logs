@@ -1,0 +1,122 @@
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2026-02-05 20:32:20.826+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-02-05 20:32:20.941+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-02-05 20:32:21.063+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 17.0.17+10
+2026-02-05 20:32:23.124+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-02-05 20:32:23.317+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-02-05 20:32:25.752+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-02-05 20:32:28.301+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@1517f633{Jenkins v2.541.1,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@4fe01803{STARTED}}
+2026-02-05 20:32:28.319+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@1b9c1b51{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-02-05 20:32:28.320+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@1eea9d2d{STARTING}[12.1.5,sto=0] @7261ms
+2026-02-05 20:32:28.321+0000 [id=25]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-02-05 20:32:29.619+0000 [id=24]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.541.1
+2026-02-05 20:32:30.285+0000 [id=31]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-02-05 20:32:32.147+0000 [id=34]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-02-05 20:32:59.110+0000 [id=32]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-02-05 20:33:00.601+0000 [id=37]	INFO	h.p.b.g.GlobalTimeOutConfiguration#load: global timeout not set
+2026-02-05 20:33:01.962+0000 [id=30]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-02-05 20:33:01.968+0000 [id=30]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-02-05 20:33:03.401+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-02-05 20:33:03.402+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-02-05 20:33:04.839+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-02-05 20:33:04.929+0000 [id=31]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-02-05 20:33:05.000+0000 [id=52]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2026-02-05 20:33:05.243+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-02-05 20:33:05.650+0000 [id=24]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2026-02-05 20:33:14.531+0000 [id=52]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2026-02-05 20:33:16.030+0000 [id=52]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for jenkins.plugins.nodejs.tools.MirrorNodeJSInstaller
+2026-02-05 20:33:18.077+0000 [id=52]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.plugins.nodejs.tools.NodeJSInstaller
+2026-02-05 20:33:18.077+0000 [id=52]	INFO	hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2026-02-05 20:53:47.835+0000 [id=17]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.24 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-05 20:59:03.366+0000 [id=21]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.75 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 06:36:56.146+0000 [id=21]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.58 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 06:36:56.326+0000 [id=86]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.33 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 06:37:31.219+0000 [id=84]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.168 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 10:45:24.117+0000 [id=20]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.42 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 13:54:52.973+0000 [id=21]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.146 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-06 20:33:07.266+0000 [id=6830]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for jenkins.plugins.nodejs.tools.MirrorNodeJSInstaller
+2026-02-07 08:14:48.693+0000 [id=86]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.8 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-07 20:33:06.526+0000 [id=12866]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2026-02-07 20:33:12.958+0000 [id=12866]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2026-02-07 20:33:14.445+0000 [id=12866]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for jenkins.plugins.nodejs.tools.MirrorNodeJSInstaller
+2026-02-07 20:33:16.428+0000 [id=12866]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.plugins.nodejs.tools.NodeJSInstaller
+2026-02-07 20:33:16.428+0000 [id=12866]	INFO	hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2026-02-08 08:20:00.585+0000 [id=26]	INFO	winstone.Logger#logInternal: JVM is terminating. Shutting down Jetty
+2026-02-08 08:20:00.588+0000 [id=26]	INFO	org.eclipse.jetty.server.Server#doStop: Stopped oejs.Server@1eea9d2d{STOPPING}[12.1.5,sto=0]
+2026-02-08 08:20:00.592+0000 [id=26]	INFO	o.e.j.server.AbstractConnector#doStop: Stopped oejs.ServerConnector@1b9c1b51{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-02-08 08:20:00.596+0000 [id=26]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Stopping Jenkins
+2026-02-08 08:20:00.601+0000 [id=26]	INFO	jenkins.model.Jenkins$17#onAttained: Started termination
+2026-02-08 08:20:00.602+0000 [id=26]	INFO	h.p.b.global.Lifecycle#shutdown: Shutdown complete - Global TimeOut ScheduledExecutorService had 0 tasks pending
+2026-02-08 08:20:00.610+0000 [id=26]	INFO	jenkins.model.Jenkins$17#onAttained: Completed termination
+2026-02-08 08:20:00.611+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpDisconnectComputers: Starting node disconnection
+2026-02-08 08:20:00.620+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpShutdownPluginManager: Stopping plugin manager
+2026-02-08 08:20:00.639+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpPersistQueue: Persisting build queue
+2026-02-08 08:20:05.098+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpAwaitDisconnects: Waiting for node disconnection completion
+2026-02-08 08:20:05.098+0000 [id=26]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Jenkins stopped
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2026-02-08 08:32:48.527+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-02-08 08:32:48.837+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-02-08 08:32:48.959+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 17.0.17+10
+2026-02-08 08:33:17.121+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-02-08 08:33:21.242+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-02-08 08:34:24.674+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-02-08 08:35:07.053+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@1517f633{Jenkins v2.541.1,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@4fe01803{STARTED}}
+2026-02-08 08:35:07.087+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@1caf2a82{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-02-08 08:35:07.090+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@4525d1d3{STARTING}[12.1.5,sto=0] @138135ms
+2026-02-08 08:35:07.092+0000 [id=25]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-02-08 08:36:12.214+0000 [id=24]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.541.1
+2026-02-08 08:36:34.617+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-02-08 08:36:44.909+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-02-08 08:38:39.957+0000 [id=44]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-02-08 08:38:49.515+0000 [id=38]	INFO	h.p.b.g.GlobalTimeOutConfiguration#load: global timeout not set
+2026-02-08 08:38:59.576+0000 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-02-08 08:38:59.584+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-02-08 08:39:12.939+0000 [id=44]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-02-08 08:39:12.940+0000 [id=44]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-02-08 08:39:20.817+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-02-08 08:39:21.136+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-02-08 08:39:22.073+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-02-08 08:39:24.198+0000 [id=52]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for jenkins.plugins.nodejs.tools.MirrorNodeJSInstaller
+2026-02-08 08:39:24.745+0000 [id=24]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2026-02-08 13:16:17.664+0000 [id=17]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.9 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-08 15:40:03.572+0000 [id=1391]	INFO	o.j.p.g.w.s.DefaultPushGHEventSubscriber#onEvent: Received PushEvent for https://github.com/Snake-AID/SnakeAid.Backend from 140.82.115.174 ⇒ https://jenkins.duykhiem.id.vn:8080/github-webhook/
+2026-02-08 15:45:24.371+0000 [id=26]	INFO	winstone.Logger#logInternal: JVM is terminating. Shutting down Jetty
+2026-02-08 15:45:24.372+0000 [id=26]	INFO	org.eclipse.jetty.server.Server#doStop: Stopped oejs.Server@4525d1d3{STOPPING}[12.1.5,sto=0]
+2026-02-08 15:45:25.056+0000 [id=26]	INFO	o.e.j.server.AbstractConnector#doStop: Stopped oejs.ServerConnector@1caf2a82{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-02-08 15:45:25.067+0000 [id=26]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Stopping Jenkins
+2026-02-08 15:45:29.157+0000 [id=26]	INFO	jenkins.model.Jenkins$17#onAttained: Started termination
+2026-02-08 15:45:29.163+0000 [id=26]	INFO	h.p.b.global.Lifecycle#shutdown: Shutdown complete - Global TimeOut ScheduledExecutorService had 0 tasks pending
+2026-02-08 15:45:30.478+0000 [id=26]	INFO	jenkins.model.Jenkins$17#onAttained: Completed termination
+2026-02-08 15:45:30.478+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpDisconnectComputers: Starting node disconnection
+2026-02-08 15:45:31.700+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpShutdownPluginManager: Stopping plugin manager
+2026-02-08 15:45:31.726+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpPersistQueue: Persisting build queue
+2026-02-08 15:45:33.100+0000 [id=26]	INFO	jenkins.model.Jenkins#_cleanUpAwaitDisconnects: Waiting for node disconnection completion
+2026-02-08 15:45:33.101+0000 [id=26]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Jenkins stopped
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2026-02-08 15:49:44.729+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-02-08 15:49:45.018+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-02-08 15:49:45.140+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 17.0.17+10
+2026-02-08 15:50:12.413+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-02-08 15:50:17.452+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-02-08 15:51:25.114+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-02-08 15:51:55.603+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@1517f633{Jenkins v2.541.1,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@4fe01803{STARTED}}
+2026-02-08 15:51:55.637+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@715fb77{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-02-08 15:51:55.641+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@7c974942{STARTING}[12.1.5,sto=0] @130503ms
+2026-02-08 15:51:55.644+0000 [id=25]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-02-08 15:52:34.293+0000 [id=24]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.541.1
+2026-02-08 15:52:44.321+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-02-08 15:53:05.378+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-02-08 15:56:17.739+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-02-08 15:56:23.593+0000 [id=38]	INFO	h.p.b.g.GlobalTimeOutConfiguration#load: global timeout not set
+2026-02-08 15:56:29.675+0000 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-02-08 15:56:29.677+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-02-08 15:56:40.706+0000 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-02-08 15:56:40.707+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-02-08 15:56:55.893+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-02-08 15:56:56.323+0000 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-02-08 15:56:57.557+0000 [id=34]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-02-08 15:56:59.818+0000 [id=52]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for jenkins.plugins.nodejs.tools.MirrorNodeJSInstaller
+2026-02-08 15:57:00.327+0000 [id=24]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
