@@ -62,11 +62,14 @@ services:
     privileged: false
 
   dind:
+    stop_grace_period: 60s
+    stop_signal: SIGTERM
     cpu_shares: 90
     command:
       - --host=tcp://0.0.0.0:2375
+      - --iptables=false
       - --storage-driver=overlay2
-    container_name: dind-jenkinsdock
+    container_name: dind
     deploy:
       resources:
         limits:
