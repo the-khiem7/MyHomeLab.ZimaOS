@@ -16,12 +16,13 @@ x-casaos:
 
 services:
   jenkinsdock:
+    stop_grace_period: 30s
     cpu_shares: 50
     command: []
     container_name: JenkinsDock
     depends_on:
       dind:
-        condition: service_started
+        condition: service_healthy
         required: true
     deploy:
       resources:
@@ -42,12 +43,17 @@ services:
         protocol: tcp
     restart: always
     user: root
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/login"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     volumes:
       - type: bind
-        source: /DATA/AppData/Jenkins/data
+        source: /DATA/AppData/JenkinsDock/data
         target: /data
       - type: bind
-        source: /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data
+        source: /DATA/AppData/JenkinsDock/home
         target: /var/jenkins_home
     devices: []
     cap_add: []
