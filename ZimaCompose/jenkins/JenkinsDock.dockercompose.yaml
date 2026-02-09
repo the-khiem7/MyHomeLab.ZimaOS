@@ -32,7 +32,7 @@ services:
           devices: []
     environment:
       - DOCKER_BUILDKIT=1
-      - DOCKER_HOST=tcp://dind:2375
+      - DOCKER_HOST=unix:///runner/services/docker/docker.sock
     hostname: JenkinsDock
     image: thekhiem7/jenkinsdock:lts-jdk17
     labels:
@@ -44,17 +44,21 @@ services:
     restart: always
     user: root
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/login"]
+      test: ["CMD", "curl", "-fsS", "--connect-timeout", "2", "--max-time", "5", "-o", "/dev/null", "http://localhost:8080/login"]
       interval: 30s
       timeout: 5s
       retries: 3
+      start_period: 3m    
     volumes:
-      - type: bind
-        source: /DATA/AppData/JenkinsDock/data
-        target: /data
-      - type: bind
-        source: /DATA/AppData/JenkinsDock/home
-        target: /var/jenkins_home
+    - type: bind
+      source: /DATA/AppData/JenkinsDock/home
+      target: /var/jenkins_home
+    - type: bind
+      source: /DATA/AppData/JenkinsDock/data
+      target: /data
+    - type: volume
+      source: dind-socket
+      target: /runner/services/docker
     devices: []
     cap_add: []
     networks:
