@@ -56,8 +56,8 @@ services:
     - type: bind
       source: /DATA/AppData/JenkinsDock/data
       target: /data
-    - type: volume
-      source: dind-socket
+    - type: bind
+      source: /DATA/AppData/DockerInDocker/dockerSocket
       target: /runner/services/docker
     devices: []
     cap_add: []
@@ -96,8 +96,8 @@ services:
       - type: bind
         source: /DATA/AppData/DockerInDocker/data-root
         target: /var/lib/docker
-      - type: volume
-        source: dind-socket
+      - type: bind
+        source: /DATA/AppData/DockerInDocker/dockerSocket
         target: /runner/services/docker
     ports: []
     devices: []
@@ -108,6 +108,3 @@ services:
 networks:
   jenkinsdock:
     name: jenkinsdock
-
-volumes:
-  dind-socket:
