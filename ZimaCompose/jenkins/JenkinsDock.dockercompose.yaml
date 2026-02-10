@@ -33,6 +33,7 @@ services:
     environment:
       - DOCKER_BUILDKIT=1
       - DOCKER_HOST=unix:///runner/services/docker/docker.sock
+      - TZ=Asia/Ho_Chi_Minh
     hostname: JenkinsDock
     image: thekhiem7/jenkinsdock:lts-jdk17
     labels:
