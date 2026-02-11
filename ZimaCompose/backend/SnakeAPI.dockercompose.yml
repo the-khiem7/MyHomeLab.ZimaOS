@@ -1,18 +1,42 @@
+name: snakeaid-api
+
+x-casaos:
+  author: self
+  category: self
+  title:
+    custom: SnakeAid API
+    en_us: snakeaid-api
+  hostname: ""
+  icon: https://avatars.githubusercontent.com/u/241086090?s=200&v=4
+  index: /index.html
+  is_uncontrolled: false
+  port_map: "5110"
+  scheme: http
+  store_app_id: snakeaid-api
+
 services:
   snakeaid-api:
+    cpu_shares: 90
+    command: []
     container_name: snakeaid-api
+    deploy:
+      resources:
+        limits:
+          memory: 8283295744
+        reservations:
+          devices: []
     image: thekhiem7/snakeaid-api:latest
-    pull_policy: always
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    labels:
+      icon: https://avatars.githubusercontent.com/u/241086090?s=200&v=4
     ports:
-      - "8080:8080"
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/swagger/index.html || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 20s
+      - target: 8080
+        published: "5110"
+        protocol: tcp
+    pull_policy: always
     restart: unless-stopped
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
     environment:
