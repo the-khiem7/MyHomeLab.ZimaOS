@@ -1,0 +1,52 @@
+name: jdownloader-2
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/jdownloader.webp
+  index: /
+  is_uncontrolled: false
+  port_map: "5800"
+  scheme: http
+  store_app_id: jdownloader-2
+  title:
+    custom: JDownloader
+    en_us: JDownloader
+
+services:
+  jdownloader-2:
+    cpu_shares: 90
+    command: []
+    container_name: jdownloader
+    deploy:
+      resources:
+        limits:
+          memory: 8283295744
+        reservations:
+          devices: []
+    environment:
+      - DARK_MODE=1
+      - DISPLAY_HEIGHT=720
+      - DISPLAY_WIDTH=1280
+      - GROUP_ID=1000
+      - TZ=Asia/Ho_Chi_Minh
+      - USER_ID=1000
+    image: jlesage/jdownloader-2:latest
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/jdownloader.webp
+    ports:
+      - target: 5800
+        published: "5800"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/jdownloader-2/config
+        target: /config
+      - type: bind
+        source: /DATA/Downloads
+        target: /output
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
