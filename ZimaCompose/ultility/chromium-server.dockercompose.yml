@@ -1,0 +1,58 @@
+name: chromium-server
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/chromium.png
+  index: /
+  is_uncontrolled: false
+  port_map: "3000"
+  scheme: http
+  store_app_id: chromium-server
+  title:
+    custom: Chromium Server
+    en_us: chromium-server
+
+services:
+  chromium-server:
+    cpu_shares: 90
+    command: []
+    container_name: chromium-server
+    deploy:
+      resources:
+        limits:
+          memory: 3106235904
+        reservations:
+          devices: []
+    environment:
+      - CHROME_CLI=--disable-dev-shm-usage --no-sandbox --disable-gpu
+        --disable-background-timer-throttling --disable-renderer-backgrounding
+        --disable-backgrounding-occluded-windows
+      - PGID=1000
+      - PUID=1000
+      - TZ=Asia/Ho_Chi_Minh
+    image: lscr.io/linuxserver/chromium:latest
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/chromium.png
+    ports:
+      - target: 3000
+        published: "3000"
+        protocol: tcp
+      - target: 3001
+        published: "3002"
+        protocol: tcp
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+    shm_size: "1073741824"
+    volumes:
+      - type: bind
+        source: /DATA/AppData/chromium-server/config
+        target: /config
+      - type: bind
+        source: /DATA/Downloads
+        target: /downloads
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
