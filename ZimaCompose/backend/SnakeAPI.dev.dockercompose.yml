@@ -40,3 +40,30 @@ services:
     network_mode: bridge
     privileged: false
     environment:
+      - RabbitMq__Host=rabbitmq
+    depends_on:
+      - rabbitmq
+    networks:
+      - snakeaid-dev-network
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - /DATA/AppData/RabbitMQ/data:/var/lib/rabbitmq
+    restart: unless-stopped
+    networks:
+      - snakeaid-dev-network
+
+volumes:
+  rabbitmq_data:
+
+networks:
+  snakeaid-dev-network:
+    driver: bridge
