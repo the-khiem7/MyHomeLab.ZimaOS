@@ -30,6 +30,7 @@ services:
         reservations:
           devices: []
     environment:
+      - RabbitMq__Host=rabbitmq
       - FIREBASE_CREDENTIAL_PATH=/app/secrets/firebase-service-account.json
     image: thekhiem7/snakeaid-api:dev
     labels:
@@ -40,7 +41,11 @@ services:
         protocol: tcp
     pull_policy: always
     restart: unless-stopped
-    volumes: []
+    volumes:
+      - type: bind
+        source: /DATA/AppData/SnakeAid/secrets/firebase-service-account.json
+        target: /app/secrets/firebase-service-account.json
+        read_only: true
     devices: []
     cap_add: []
     networks:
