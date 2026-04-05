@@ -1,4 +1,4 @@
-name: snakeaid-api-dev
+name: 1snakeaid-api-dev
 
 x-casaos:
   author: self
@@ -12,19 +12,25 @@ x-casaos:
   is_uncontrolled: false
   port_map: "5111"
   scheme: http
-  store_app_id: snakeaid-api-dev
+  store_app_id: 1snakeaid-api-dev
 
 services:
-  snakeaid-api-dev:
+  1snakeaid-api-dev:
     cpu_shares: 90
     command: []
-    container_name: snakeaid-api-dev
+    container_name: 1snakeaid-api-dev
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
     deploy:
       resources:
         limits:
-          memory: 8283295744
+          memory: 8283287552
         reservations:
           devices: []
+    environment:
+      - FIREBASE_CREDENTIAL_PATH=/app/secrets/firebase-service-account.json
     image: thekhiem7/snakeaid-api:dev
     labels:
       icon: https://thumbs.dreamstime.com/b/minimalist-viper-logo-design-snake-silhouette-sleek-modern-black-white-featuring-s-head-integrated-stylized-v-362003031.jpg
@@ -37,33 +43,44 @@ services:
     volumes: []
     devices: []
     cap_add: []
-    network_mode: bridge
+    networks:
+      - snakeaid-dev-network
     privileged: false
-    environment:
-      - RabbitMq__Host=rabbitmq
-    depends_on:
-      - rabbitmq
-    networks:
-      - snakeaid-dev-network
-
   rabbitmq:
+    cpu_shares: 90
+    command: []
     container_name: rabbitmq
-    image: rabbitmq:management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
+    deploy:
+      resources:
+        limits:
+          memory: 8283287552
+        reservations:
+          devices: []
     environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: password
-    volumes:
-      - /DATA/AppData/RabbitMQ/data:/var/lib/rabbitmq
+      - RABBITMQ_DEFAULT_PASS=password
+      - RABBITMQ_DEFAULT_USER=admin
+    image: rabbitmq:management
+    labels:
+      icon: https://thumbs.dreamstime.com/b/minimalist-viper-logo-design-snake-silhouette-sleek-modern-black-white-featuring-s-head-integrated-stylized-v-362003031.jpg
+    ports:
+      - target: 5672
+        published: "5672"
+        protocol: tcp
+      - target: 15672
+        published: "15672"
+        protocol: tcp
     restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/RabbitMQ/data
+        target: /var/lib/rabbitmq
+    devices: []
+    cap_add: []
     networks:
       - snakeaid-dev-network
-
-volumes:
-  rabbitmq_data:
+    privileged: false
 
 networks:
   snakeaid-dev-network:
+    name: snakeaid-dev-network
     driver: bridge
