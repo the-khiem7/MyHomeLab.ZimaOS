@@ -11,6 +11,7 @@ This lab hosts a variety of services ranging from development tools (Jira, Jenki
 ## Quick Links
 
 - [**Getting Started**](getting-started.md): How to deploy these apps.
+- [**SSH Access**](ssh-access.md): Private LAN and public Cloudflare Tunnel profiles.
 - [**Applications**](apps/README.md): Detailed guides for each service.
 - [**Agent Guidance**](agents.md): For AI Agents modifying this repo.
 - [**Infrastructure**](apps/jenkins/jenkins.md): CI/CD and system tools.

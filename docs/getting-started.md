@@ -8,6 +8,9 @@ This guide helps you set up and manage the services in this repository using Zim
 - **OS**: ZimaOS (latest version recommended) or CasaOS on top of Ubuntu/Debian.
 - **Docker**: Pre-installed on ZimaOS.
 
+For workstation access, including the private LAN profile and the public
+Cloudflare Tunnel profile, see [SSH Access](ssh-access.md).
+
 ## Installation
 
 1. **Clone the repository**:

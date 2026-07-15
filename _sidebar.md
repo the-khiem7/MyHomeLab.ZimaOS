@@ -1,5 +1,6 @@
 * [🏠 Home](docs/HOME.md)
 * [🚀 Getting Started](docs/getting-started.md)
+* [🔐 SSH Access](docs/ssh-access.md)
 * [🤖 Agent Guidance](docs/agents.md)
 
 * **Backend Apps**

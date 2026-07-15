@@ -1,247 +1,125 @@
-# AGENTS: CasaOS / ZimaOS x-casaos metadata
+# AGENTS: MyHomeLab ZimaOS repository rules
 
-> Audience: Devs and agents
+> Audience: developers and agents working in this repository.
 >
-> Purpose: Provide agent-ready guidance for adding or updating `x-casaos` UI metadata in `docker-compose.yml`.
-> Scope: This covers only the `x-casaos` extension fields. Docker ignores this section entirely.
+> Purpose: define repository-wide operating rules, safety boundaries,
+> documentation conventions, and verification expectations.
 
----
+## Repository role
 
-## Non-negotiable rules
+This repository is the configuration and knowledge base for a ZimaOS homelab.
+It contains reusable documentation and Docker Compose definitions for services
+managed on ZimaOS or CasaOS.
 
-- `x-casaos` lives at the root level (same level as `services:`).
-- Do not modify runtime config in `services:` unless explicitly asked.
-- Always set `main`, `title`, `icon`, and `port_map`.
-- `port_map` is a string and must match the main service's UI port.
-- `index` is a path and should start with `/` (default to `/`).
-- Use a multi-language map even if only `en_us` is provided.
-- Unknown fields are ignored by CasaOS / ZimaOS; avoid adding them.
+Keep repository-wide policy in this file. Put topic-specific technical guidance
+in a dedicated document and reference it from here.
 
----
+## Specialized guidance
+
+| Area | Canonical document |
+| --- | --- |
+| CasaOS / ZimaOS `x-casaos` metadata | [`X-CASAOS.md`](X-CASAOS.md) |
+| SSH access architecture | [`docs/ssh-access.md`](docs/ssh-access.md) |
+| Local SSH endpoints and verified values | `docs/ssh-access.secret.md` |
+
+Read the relevant specialized document before changing that area. Do not copy
+its complete contents back into `AGENTS.md`.
+
+## Scope and change discipline
+
+- Make only changes required by the active request.
+- Preserve unrelated user changes in a dirty worktree.
+- Do not modify runtime configuration, ports, volumes, credentials, or deployed
+  services unless the request explicitly includes them.
+- Inspect the existing file and nearby conventions before adding a new pattern.
+- Prefer one canonical document per topic. Replace duplicate guidance with a
+  link or short index page.
+- Keep public documentation reusable and independent of one workstation or
+  private deployment.
+- Do not commit, push, deploy, restart services, or mutate remote systems unless
+  the user explicitly requests that action.
+
+## Public and local-secret Markdown
+
+- Regular `*.md` files are repository documentation. Treat them as public and
+  safe to commit.
+- Files named `*.secret.md` are local-only companions for environment-specific
+  agent context. They must remain ignored by Git and must never be committed.
+- Use paired names when both layers are needed: `<topic>.md` for reusable public
+  guidance and `<topic>.secret.md` for local values.
+- Public Markdown must use placeholders instead of real usernames, private IPs,
+  owner-specific hostnames, local credential paths, fingerprints, or
+  infrastructure identifiers.
+- A local secret companion may record endpoints, usernames, key locations,
+  fingerprints, verification results, and operational decisions required by an
+  agent.
+- Never place raw private keys, passwords, access tokens, tunnel tokens,
+  recovery codes, or other credential material in either Markdown layer.
+  Reference the secure local credential location instead.
+- Agents may read and maintain an existing `*.secret.md` companion when local
+  context is required, but must not expose its values in public files, logs,
+  commits, pull requests, or user-facing examples.
+
+The repository `.gitignore` must contain `*.secret.md` to enforce this
+convention.
+
+## Docker Compose boundaries
+
+- Treat each Compose file as an independently deployable service definition.
+- Preserve environment-specific values and existing service behavior unless the
+  task explicitly requests a runtime change.
+- Never infer that a documentation or metadata request authorizes changes under
+  `services:`.
+- For `x-casaos` metadata, follow `X-CASAOS.md`; its rules do not authorize
+  unrelated Compose changes.
+- Do not normalize or rewrite unrelated Compose files while editing one service.
 
 ## Agent workflow
 
-1. Identify the primary service in `services:` and set `main` to that name.
-2. Add `x-casaos` at the root if it does not exist.
-3. Populate required fields (`main`, `title`, `icon`, `port_map`, `index`).
-4. Add optional fields as needed (description, category, tips, etc.).
-5. Validate that `port_map` and `index` produce the correct UI URL.
-
----
-
-## Field reference (exhaustive)
-
-### architectures
-
-```yaml
-architectures:
-  - amd64
-  - arm64
-  - arm
-```
-
-Type: `array[string]`
-Supported values: `amd64`, `arm64`, `arm`
-Usage: App Store filters incompatible devices.
-
----
-
-### main
-
-```yaml
-main: my_service
-```
-
-Type: `string`
-Usage: Primary service name in `services:`.
-
----
-
-### title
-
-```yaml
-title:
-  en_us: "My Application"
-  zh_cn: "My app in Chinese"
-```
-
-Type: `map[string]string`
-Usage: UI display name (multi-language).
-
----
-
-### description
-
-```yaml
-description:
-  en_us: "A long description of the app"
-```
-
-Type: `map[string]string`
-Usage: App Store detail page.
-
----
-
-### tagline
-
-```yaml
-tagline:
-  en_us: "Short one-line description"
-```
-
-Type: `map[string]string`
-Usage: Short subtitle.
-
----
-
-### author
-
-```yaml
-author: "Author Name"
-```
-
-Type: `string`
-Usage: App author name.
-
----
-
-### developer
-
-```yaml
-developer: "Developer or Organization"
-```
-
-Type: `string`
-Usage: Developer or organization name.
-
----
-
-### category
-
-```yaml
-category: Utilities
-```
-
-Type: `string`
-Common values: `Utilities`, `Media`, `Backup`, `Network`, `Database`, `Development`
-
----
-
-### icon
-
-```yaml
-icon: https://example.com/icon.png
-```
-
-Type: `string (URL)`
-Usage: Main application icon.
-
----
-
-### thumbnail
-
-```yaml
-thumbnail: https://example.com/thumbnail.png
-```
-
-Type: `string (URL)`
-Usage: Optional banner image.
-
----
-
-### index
-
-```yaml
-index: /
-```
-
-Type: `string`
-Usage: Web UI path inside the container (examples: `/`, `/ui`, `/swagger`).
-
----
-
-### port_map
-
-```yaml
-port_map: "5000"
-```
-
-Type: `string`
-Usage: Primary UI port exposed by `main`.
-
----
-
-### tips
-
-```yaml
-tips:
-  before_install:
-    en_us: |
-      - Ensure ports are free
-      - Configure env vars
-```
-
-Type: `object`
-Supported keys: `before_install`
-Usage: Pre-install guidance (multi-language).
-
----
-
-## Minimal example
-
-```yaml
-version: "3.9"
-
-x-casaos:
-  architectures:
-    - amd64
-  main: app
-  title:
-    en_us: "Example App"
-  description:
-    en_us: "An example CasaOS app"
-  category: Utilities
-  icon: https://example.com/icon.png
-  port_map: "8080"
-  index: /
-
-services:
-  app:
-    image: example/app:latest
-    ports:
-      - "8080:8080"
-```
-
----
-
-## Validation checklist
-
-- `x-casaos` is at the root level.
-- `main` matches a service name in `services:`.
-- `port_map` matches the UI port exposed by `main`.
-- `index` starts with `/`.
-- Required fields are set (`main`, `title`, `icon`, `port_map`).
-- Multi-language maps include `en_us`.
-
----
-
-## Known limitations
-
-- No schema validation or strict versioning.
-- Only one `port_map` is supported.
-- Some CasaOS versions may ignore `thumbnail`.
-
----
-
-## Summary table
-
-| Purpose | Supported | Notes |
-| --- | --- | --- |
-| UI metadata | Yes | via `x-casaos` |
-| Runtime config | No | use `services:` |
-| Multi-language | Yes | map format |
-| Docker standard | No | platform extension |
-
----
-
-This document is suitable for human reading and machine parsing (agents, generators, CI pipelines).
+1. Read `AGENTS.md` and the specialized guide for the requested area.
+2. Inspect Git status and distinguish existing changes from task changes.
+3. Identify the smallest set of files that owns the requested behavior or
+   documentation.
+4. Apply scoped changes while preserving local-only and unrelated content.
+5. Verify syntax, links, ignore rules, and runtime behavior in proportion to the
+   change.
+6. Report changed files, verification evidence, deferred decisions, unrelated
+   pre-existing failures, and whether changes are staged.
+
+## Verification requirements
+
+For documentation changes:
+
+- Check internal links and navigation entries.
+- Run `git diff --check` against the files changed by the task.
+- For a public/secret pair, confirm the secret companion is ignored:
+
+  ```powershell
+  git check-ignore -v path/to/topic.secret.md
+  ```
+
+- Scan public and staged Markdown for environment-specific values before
+  committing.
+
+For Compose changes:
+
+- Validate the affected Compose file with the available Docker Compose tooling.
+- Confirm that metadata ports and service names match the actual service.
+- Separate failures caused by the task from pre-existing repository issues.
+
+## Git and secret safety
+
+- Never assume an ignored file is absent from the Git index. Verify with
+  `git ls-files` when handling sensitive local documentation.
+- If a staged public file contains private values, replace the staged content
+  with the sanitized version before handoff.
+- Do not stage or unstage unrelated user changes.
+- Do not add generated files, local overrides, environment files, or
+  `*.secret.md` files to Git.
+- Before a commit or push, review both the working-tree diff and the staged diff.
+
+## Completion criteria
+
+A task is complete when the requested change is present, relevant verification
+passes, private values remain outside Git, unrelated worktree changes are
+preserved, and the handoff clearly identifies any remaining decision or risk.
