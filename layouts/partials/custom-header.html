@@ -1,0 +1,16 @@
+{{/* Resolve the reader preference before stylesheets paint to prevent a light-mode flash. */}}
+<meta name="color-scheme" content="light dark">
+<script>
+  (function () {
+    var storageKey = "fcaj-color-mode";
+    var preference = "system";
+    try {
+      var stored = window.localStorage.getItem(storageKey);
+      if (stored === "light" || stored === "dark" || stored === "system") preference = stored;
+    } catch (error) {}
+
+    var systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.colorModePreference = preference;
+    document.documentElement.dataset.colorMode = preference === "system" ? (systemDark ? "dark" : "light") : preference;
+  })();
+</script>

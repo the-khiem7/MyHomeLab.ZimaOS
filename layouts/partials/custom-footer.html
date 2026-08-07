@@ -1,0 +1,16 @@
+{{ with .Site.Params.cloudflareWebAnalyticsToken }}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"{{ . }}"}'></script>
+{{ end }}
+
+{{ $isVietnamese := eq .Site.Language.Lang "vi" }}
+<div id="color-mode-switcher" class="color-mode-switcher">
+  <div id="color-mode-menu" class="color-mode-menu" role="radiogroup" aria-label="{{ if $isVietnamese }}Chọn giao diện{{ else }}Choose appearance{{ end }}" hidden>
+    <button type="button" role="radio" aria-checked="false" data-color-mode-option="light"><i class="fas fa-sun" aria-hidden="true"></i> {{ if $isVietnamese }}Sáng{{ else }}Light{{ end }}</button>
+    <button type="button" role="radio" aria-checked="false" data-color-mode-option="dark"><i class="fas fa-moon" aria-hidden="true"></i> {{ if $isVietnamese }}Tối{{ else }}Dark{{ end }}</button>
+    <button type="button" role="radio" aria-checked="true" data-color-mode-option="system"><i class="fas fa-desktop" aria-hidden="true"></i> {{ if $isVietnamese }}Theo hệ thống{{ else }}System{{ end }}</button>
+  </div>
+  <button id="color-mode-control" class="color-mode-control" type="button" aria-expanded="false" aria-controls="color-mode-menu" aria-label="{{ if $isVietnamese }}Thay đổi giao diện{{ else }}Change appearance{{ end }}" title="{{ if $isVietnamese }}Thay đổi giao diện{{ else }}Change appearance{{ end }}">
+    <i class="fas fa-adjust" aria-hidden="true"></i>
+  </button>
+</div>
+<script src="{{ "js/color-mode.js" | relURL }}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>

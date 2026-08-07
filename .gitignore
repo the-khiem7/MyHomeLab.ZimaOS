@@ -1,25 +1,14 @@
-# General
+# Hugo build output and cache
+public/
+resources/
+.hugo_build.lock
+
+# Local Python environment for diagram generation
+.venv/
+__pycache__/
+*.py[cod]
+
+# OS and editor noise
 .DS_Store
 Thumbs.db
-*.log
-*.tmp
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# Node
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Envrionment
-.env
-.env.*
-!.env.example
-
-# Local agent context and private documentation
-*.secret.md
-
-# Docsify
-docs/index.html.bak
+.idea/

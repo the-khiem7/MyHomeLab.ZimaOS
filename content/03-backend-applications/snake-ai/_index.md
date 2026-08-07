@@ -1,0 +1,101 @@
+---
+title: "SnakeAI Snake Detection"
+date: 2026-08-07
+weight: 1
+chapter: false
+---
+
+![SnakeAI icon](https://avatars.githubusercontent.com/u/156354296?s=200&v=4)
+
+**Category:** self | **Author:** self | **Port:** 8386
+
+FastAPI service for snake species detection using YOLO12 on CPU.
+
+## Installation (CasaOS)
+
+1.  Open **Files** in CasaOS.
+2.  Navigate to proper location (e.g. `/DATA/AppData/custom-apps`).
+3.  Create a file named `docker-compose.yml`.
+4.  Paste the content from the source on the right.  Click the options menu on the file -> **Install**.
+
+## Configuration
+
+The following environment variables can be configured:
+
+| Variable | Default Value | Description |
+| :--- | :--- | :--- |
+| `DEFAULT_CONF` | `0.25` | Confidence threshold for detection. |
+| `DEFAULT_IMGSZ` | `640` | Default image size for inference. |
+| `DEFAULT_IOU` | `0.5` | Intersection over Union threshold. |
+| `DEFAULT_TOPK` | `100` | Top K results to keep. |
+| `LOG_LEVEL` | `info` | Logging verbosity. |
+| `MAX_CONCURRENCY` | `1` | Max concurrent processing requests. |
+| `MAX_SIDE` | `1920` | Max side length for image resizing. |
+| `MAX_UPLOAD_MB` | `10` | Max upload size in MB. |
+| `MODEL_PATH` | `/models/best.pt` | Path to the YOLO model file. |
+| `MODEL_VERSION` | `7` | Model version identifier. |
+| `RATE_LIMIT_RPM` | `120` | Rate limit in requests per minute. |
+| `REQUEST_QUEUE_LIMIT` | `20` | Max request queue size. |
+
+#### Docker Compose
+
+```yaml
+name: snakeai
+x-casaos:
+  author: self
+  category: self
+  title:
+    custom: ""
+    en_us: SnakeAI Snake Detection
+  description:
+    en_us: FastAPI service for snake species detection using YOLO12 on CPU.
+  hostname: ""
+  icon: https://avatars.githubusercontent.com/u/156354296?s=200&v=4
+  index: /swagger
+  is_uncontrolled: false
+  port_map: "8386"
+  scheme: http
+  store_app_id: snakeai
+
+services:
+  snakeai:
+    cpu_shares: 90
+    command: []
+    container_name: snakeai
+    deploy:
+      resources:
+        limits:
+          memory: 8283291648
+        reservations:
+          devices: []
+    image: thekhiem7/snakeaid-snake-detection-ai:8
+    labels:
+      icon: https://avatars.githubusercontent.com/u/156354296?s=200&v=4
+    ports:
+      - target: 8000
+        published: "8386"
+        protocol: tcp
+    restart: unless-stopped
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    environment:
+      - DEFAULT_CONF=0.25
+      - DEFAULT_IMGSZ=640
+      - DEFAULT_IOU=0.5
+      - DEFAULT_TOPK=100
+      - LOG_LEVEL=info
+      - MAX_CONCURRENCY=1
+      - MAX_SIDE=1920
+      - MAX_UPLOAD_MB=10
+      - MODEL_PATH=/models/best.pt
+      - MODEL_VERSION=7
+      - RATE_LIMIT_RPM=120
+      - REQUEST_QUEUE_LIMIT=20
+      - SAVE_DIR=/data/saved_images
+      - URL_FETCH_TIMEOUT_SECONDS=8
+      - URL_MAX_DOWNLOAD_MB=10
+      - URL_MAX_REDIRECTS=3
+```

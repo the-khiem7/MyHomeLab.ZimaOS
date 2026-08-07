@@ -1,0 +1,38 @@
+baseURL = "/"
+relativeURLs = false
+canonifyURLs = false
+defaultContentLanguage = "en"
+ignoreFiles = ['(?:^|/)_tools(?:/|$)']
+
+theme = "hugo-theme-learn"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+themeVariant = "workshop"
+editURL = ""
+description = "Bilingual documentation for a ZimaOS homelab and its self-hosted services."
+author = "The Khiem"
+organization = "MyHomeLab ZimaOS"
+authors = ["The Khiem"]
+cloudflareWebAnalyticsToken = ""
+showVisitedLinks = true
+disableBreadcrumb = false
+disableNextPrev = false
+
+[Languages]
+[Languages.en]
+title = "MyHomeLab ZimaOS"
+weight = 1
+label = "English"
+
+[Languages.vi]
+title = "MyHomeLab ZimaOS"
+weight = 2
+label = "Tiếng Việt"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
